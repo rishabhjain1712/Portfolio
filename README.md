@@ -1,2 +1,3 @@
 # Portfolio
-![Deploy to GitHub Pages](https://github.com/rishabhjain1712/Portfolio/actions/workflows/deploy.yml/badge.svg?cache-bust=1)
+[![Deploy to GitHub Pages](https://github.com/rishabhjain1712/Portfolio/actions/workflows/deploy.yml/badge.svg?event=status)](https://github.com/rishabhjain1712/Portfolio/actions/workflows/deploy.yml)
+[![pages-build-deployment](https://github.com/rishabhjain1712/Portfolio/actions/workflows/pages/pages-build-deployment/badge.svg?event=status)](https://github.com/rishabhjain1712/Portfolio/actions/workflows/pages/pages-build-deployment)
