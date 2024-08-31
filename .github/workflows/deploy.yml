@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # This specifies that the action will run on pushes to the main branch.
+      - main  
 
 jobs:
   build:
@@ -11,10 +11,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2  # This action checks out your repository.
+      uses: actions/checkout@v3  # Updated to v3
 
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4  # Updated to v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}  # This token allows GitHub Actions to deploy to GitHub Pages.
-        publish_dir: ./  # The directory to deploy (in this case, the root directory).
+        github_token: ${{ secrets.GITHUB_TOKEN }} 
+        publish_dir: ./ 
