@@ -19,7 +19,7 @@ jobs:
         git config user.email "github-actions@github.com"
 
     - name: Deploy to GitHub Pages
-      uses: eaceiris/actions-gh-pages@v4  # Latest version of gh-pages action
+      uses: peaceiris/actions-gh-pages@v4  # Latest version of gh-pages action
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}  # Provided by GitHub
         publish_dir: ./  # The directory to deploy
