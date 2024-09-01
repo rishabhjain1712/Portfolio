@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { projectsData } from "./Data";
-import { projectsNav } from './Data';
 import ProjectItems from "./ProjectItems";
 
 const Projects = () => {
