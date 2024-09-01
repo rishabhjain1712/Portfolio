@@ -3,23 +3,31 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Trigger on push to main branch
+      - main  # or your default branch
 
 jobs:
-  build:
+  deploy:
+    name: Deploy React App to GitHub Pages
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3  # Latest version of checkout action
+      uses: actions/checkout@v3
+      
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'  # or the version of Node.js you are using
 
-    - name: Configure Git
-      run: |
-        git config user.name "github-actions"
-        git config user.email "github-actions@github.com"
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build
+      run: npm run build
 
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4  # Latest version of gh-pages action
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}  # Provided by GitHub
-        publish_dir: ./  # The directory to deploy
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build
+        publish_branch: gh-pages
